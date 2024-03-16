@@ -1,0 +1,80 @@
+﻿@model MovieSearch
+
+@{
+    ViewData["Title"] = "Search Movie Results";
+}
+<div class="text-center">
+    <h1 class="display-4">Search Movie Results</h1>
+    <br /><br /><br /><br />
+
+    </div>
+    <div>
+    <table class="table">
+        <thead>
+            <tr>
+                <th>
+                    <p>Release Date</p>
+                    
+                </th>
+                <th>
+                    <p>Title</p>
+                </th>
+                <th>
+                    <p>Overview</p>
+                </th>
+                <th>
+                    <p>Popularity</p>
+                </th>
+                <th>
+                    <p>Vote Count</p>
+                </th>
+                <th>
+                    <p>Vote Average</p>
+                </th>
+                <th>
+                    <p>Original Language</p>
+                </th>
+                <th>
+                    <p>Genre</p>
+                </th>
+                <th>
+                    <p>Poster URL</p>
+                </th>
+            </tr>
+        </thead>
+        <tbody>
+            @foreach (var item in Model.ListMovies)
+            {
+                <tr>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.ReleaseDate)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.Title)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.Overview)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.Popularity)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.VoteCount)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.VoteAverage)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.OriginalLanguage)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.Genre)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.PosterUrl)
+                    </td>
+                </tr>
+            }
+        </tbody>
+    </table>
+    </div>

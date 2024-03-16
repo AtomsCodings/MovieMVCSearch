@@ -1,0 +1,34 @@
+﻿@model MovieSearch
+
+@{
+    ViewData["Title"] = "Search Movies";
+}
+
+<div class="text-center">
+    <h1 class="display-4">Search Movies</h1>
+
+    @using (Html.BeginForm("Index", "Home", FormMethod.Post))
+    {
+        <br /><br /><br />
+        <p>What movie title would you like to find?</p>
+
+        <p style="color:red">@Html.ValidationMessageFor(model => model.MovieTitleSearch)</p>
+        @Html.EditorFor(model => model.MovieTitleSearch)
+        <br />
+
+        <br />
+        <p>Or what genre would you like to find?</p>
+        <p style="color:red">@Html.ValidationMessageFor(model => model.GenreSearch)</p>
+        @Html.EditorFor(model => model.GenreSearch)
+
+        <br /><br /><br />
+        <p>Would you like to limit your result listing?</p>
+        <p style="color:red">
+            @Html.ValidationMessageFor(model => model.LimitSearchResults)
+        </p>
+        @Html.EditorFor(model => model.LimitSearchResults)
+
+                <br /><br /><br />
+                <button type="submit">Enter</button>
+    }
+</div>
